@@ -59,10 +59,11 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Jun 2015",
       endDate: "Oct 2016",
       summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+        "An AI chatbot project using Python, NLP concepts, and conversational flows to handle property inquiries, user preferences, and recommendation-style responses.",
+      linkPreview: "/",
+      linkSource: "https://github.com/usmanmunim",
+      image: "/zen-og.png",
     },
-  ],
-  projects: [
     {
       name: "Spotifu Music",
       summary: "A music streaming app that emulates Spotify's core features.",
