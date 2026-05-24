@@ -176,7 +176,7 @@ export const SITE_CONTENT: SiteContent = {
 
   about: {
     description: `
-      I am a Computer Science student at Asia Pacific University in Kuala Lumpur, Malaysia, with a strong interest in software development and mobile application development.
+      I am a second year Computer Science student at Asia Pacific University in Kuala Lumpur, Malaysia, with a strong interest in software development and mobile application development.
 
       I have hands-on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
 

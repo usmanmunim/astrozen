@@ -176,6 +176,9 @@ body {
 /* White text → heading color */
 [data-theme="light"] .text-white { color: var(--heading) !important; }
 
+/* Primary color — keep blue in light mode */
+[data-theme="light"] .text-primary { color: #2563eb !important; }
+
 /* Neutral text → body color */
 [data-theme="light"] .text-neutral { color: var(--body) !important; }
 
