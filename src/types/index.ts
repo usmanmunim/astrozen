@@ -33,6 +33,7 @@ export interface EducationProps {
   degree: string;
   startDate: string;
   endDate: string;
+  details?: string[];
 }
 
 export interface SiteContent {

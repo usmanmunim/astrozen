@@ -32,9 +32,9 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Usman",
-    specialty: "Computer Science Student | Aspiring Software Developer",
+    specialty: "Computer Science Student",
     summary:
-      "Computer Science student at Asia Pacific University, Kuala Lumpur, with hands on experience in Flutter app development, C, C++, Java, Python, and Linux server configuration. Passionate about building practical software and learning through real projects.",
+      "Computer Science student at Asia Pacific University, Kuala Lumpur, with hands-on experience in Flutter app development, C, C++, Java, Python, and Linux server configuration. Passionate about building practical software and learning through real projects.",
     email: "usmanmunim30@gmail.com",
   },
 
@@ -47,7 +47,7 @@ export const SITE_CONTENT: SiteContent = {
       summary: [
         "Helped students and staff fix everyday IT issues: crashed computers, broken logins, software not loading. Not glamorous, but I learned how a real lab environment runs.",
         "Diagnosed hardware and software problems across classroom PCs and lab machines. Got good at spotting issues fast.",
-        "Kept daily IT operations running smoothly so classes weren't disrupted. Basically on-call for anything that went wrong.",
+        "Kept daily IT operations running smoothly so classes weren't disrupted. Basically on call for anything that went wrong.",
       ],
     },
   ],
@@ -58,12 +58,22 @@ export const SITE_CONTENT: SiteContent = {
       degree: "Bachelor of Computer Science",
       startDate: "2024",
       endDate: "Present",
+      details: [
+        "Relevant coursework includes Data Structures, Object-Oriented Programming, Networking, and Operating Systems.",
+        "Building practical projects using Flutter, Firebase, Java, Python, C, C++, and SQL.",
+        "Learning software development, database systems, networking, and system administration.",
+      ],
     },
     {
       institution: "NCC UK – TMUC Bahria Springs | Rawalpindi, Pakistan",
       degree: "Level 3 International Foundation Diploma in Computer Science",
       startDate: "2023",
       endDate: "2024",
+      details: [
+        "Completed a foundation pathway in Computer Science.",
+        "Studied programming fundamentals, computing concepts, and academic skills.",
+        "Prepared for progression into Bachelor of Computer Science at Asia Pacific University.",
+      ],
     },
   ],
 
@@ -112,16 +122,16 @@ export const SITE_CONTENT: SiteContent = {
       image: "/project-inventory.png",
     },
     {
-      name: "AI Chatbot for Property Agents",
+      name: "Homy Real Estate Chatbot",
       summary:
         "A real estate chatbot that handles property inquiries using basic NLP, intent detection, and predefined response flows.",
-      linkSource: "https://github.com/usmanmunim",
+      linkSource: "https://github.com/usmanmunim/Homy-Real-Estate-Chatbot",
       image: "/project-homy.png",
     },
     {
       name: "Network Design & Simulation",
       summary:
-        "A multi subnet LAN and WAN network designed in Cisco Packet Tracer, covering routing, switching, VLANs, subnetting, and device configuration.",
+        "A multi-subnet LAN and WAN network designed in Cisco Packet Tracer, covering routing, switching, VLANs, subnetting, and device configuration.",
       linkSource: "https://github.com/usmanmunim/Cisco-Packet-Tracer-Network-Project",
       image: "/project-network.png",
     },
@@ -129,7 +139,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Linux Server Administration",
       summary:
         "Set up a Linux server from scratch using Rocky Linux in VirtualBox. Configured DNS, web hosting, email, user accounts, and firewall rules. Broke it multiple times, fixed it every time.",
-      linkSource: "https://github.com/usmanmunim",
+      linkSource: "https://github.com/usmanmunim/Linux-Server-Administration",
       image: "/project-linux.svg",
     },
   ],
@@ -168,7 +178,7 @@ export const SITE_CONTENT: SiteContent = {
     description: `
       I am a Computer Science student at Asia Pacific University in Kuala Lumpur, Malaysia, with a strong interest in software development and mobile application development.
 
-      I have hands on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
+      I have hands-on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
 
       Through my projects, I have learned to solve problems, debug issues, work with different technologies, and build user focused solutions.
     `,

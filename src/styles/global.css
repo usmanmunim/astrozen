@@ -81,8 +81,8 @@
   --header-bg: rgba(248, 250, 252, 0.9);
   --menu-bg: rgba(248, 250, 252, 0.98);
   --heading: #0f172a;
-  --body: #64748b;
-  --muted: rgba(100, 116, 139, 0.5);
+  --body: #334155;
+  --muted: #64748b;
   --border: rgba(15, 23, 42, 0.08);
   --border-md: rgba(15, 23, 42, 0.12);
   --border-subtle: rgba(15, 23, 42, 0.05);
@@ -111,11 +111,11 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.18) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.21) 1.2px, transparent 1.2px);
   background-size: 30px 30px;
 }
 [data-theme="light"] .page-bg {
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.22) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.32) 1.2px, transparent 1.2px);
 }
 
 .page-aura {

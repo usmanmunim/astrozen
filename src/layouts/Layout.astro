@@ -9,6 +9,7 @@ const {
   description,
   siteLogo,
   navLinks,
+  statusColor,
   lang,
   author,
   socialLinks,
@@ -63,7 +64,7 @@ const ogImgUrl = canonicalURL + socialImage;
 
     <!-- Content sits above the background -->
     <div class="relative z-10 mx-auto max-w-[900px]">
-      <Header siteLogo={siteLogo} navLinks={navLinks} />
+      <Header siteLogo={siteLogo} navLinks={navLinks} statusColor={statusColor} />
       <main class="px-6">
         <slot />
       </main>

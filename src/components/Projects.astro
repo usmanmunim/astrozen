@@ -78,6 +78,7 @@ const techLabels = [
 
 <style>
   .project-card {
+    min-height: 380px;
     background: var(--card-bg);
     border-color: var(--border);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -105,6 +106,7 @@ const techLabels = [
     background: var(--img-bg);
   }
   @media (min-width: 640px) {
+    .project-card     { min-height: 460px; }
     .project-img-wrap { height: 230px; }
   }
   .project-img {

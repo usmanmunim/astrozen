@@ -11,13 +11,23 @@ const { education } = Astro.props;
 
 <Section text="Education" href="education">
   {
-    education.map(({ institution, degree, startDate, endDate }, i) => (
+    education.map(({ institution, degree, startDate, endDate, details }, i) => (
       <div class="reveal-left mb-8 last:mb-0" style={`transition-delay: ${i * 80}ms`}>
         <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
           <h3 class="text-base font-semibold text-white">{institution}</h3>
           <span class="text-xs tabular-nums text-neutral/40 shrink-0">{startDate} – {endDate}</span>
         </div>
-        <p class="text-sm font-medium text-primary/70">{degree}</p>
+        <p class="text-sm font-medium text-primary/70 mb-3">{degree}</p>
+        {details && details.length > 0 && (
+          <ul class="space-y-2">
+            {details.map((point) => (
+              <li class="flex gap-3 text-sm leading-relaxed text-neutral/80">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary/40 shrink-0"></span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     ))
   }
