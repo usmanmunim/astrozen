@@ -20,7 +20,7 @@ const ogImgUrl = canonicalURL + socialImage;
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-pt-16 scroll-smooth">
+<html lang={lang} data-theme="dark" class="scroll-pt-16 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -29,6 +29,15 @@ const ogImgUrl = canonicalURL + socialImage;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Prevent flash of wrong theme -->
+    <script is:inline>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", saved ?? preferred);
+      })();
+    </script>
 
     <Font cssVariable="--font-gabarito" preload />
     <Font cssVariable="--font-be-vietnam-pro" preload />
@@ -45,10 +54,41 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
   <body class="bg-black font-sans">
-    <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
-      <slot />
-    </main>
-    <Footer author={author} socialLinks={socialLinks} />
+    <!-- Fixed full-page animated background -->
+    <div class="page-bg" aria-hidden="true">
+      <div class="page-aura page-aura-1"></div>
+      <div class="page-aura page-aura-2"></div>
+      <div class="page-aura page-aura-3"></div>
+    </div>
+
+    <!-- Content sits above the background -->
+    <div class="relative z-10 mx-auto max-w-[900px]">
+      <Header siteLogo={siteLogo} navLinks={navLinks} />
+      <main class="px-6">
+        <slot />
+      </main>
+      <Footer author={author} socialLinks={socialLinks} />
+    </div>
   </body>
 </html>
+
+<script>
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduced) {
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) => el.classList.add("visible"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: "0px 0px -30px 0px" }
+    );
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach((el) => observer.observe(el));
+  }
+</script>

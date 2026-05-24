@@ -1,6 +1,5 @@
 ---
 import Section from "./Section.astro";
-import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
 interface Props {
@@ -8,52 +7,123 @@ interface Props {
 }
 
 const { projects } = Astro.props;
+
+const techLabels = [
+  "Flutter · Firebase",
+  "Java · Swing",
+  "Python · CLI",
+  "C · File I/O",
+  "Python · NLP",
+  "Cisco · Networking",
+  "Linux · Rocky",
+];
 ---
 
 <Section text="Featured Projects" href="projects">
-  {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
-      return (
+  <div class="grid sm:grid-cols-2 gap-5">
+    {
+      projects.map(({ name, summary, image, linkSource, linkPreview }, index) => (
         <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          class={`${index % 2 === 0 ? "reveal-left" : "reveal-right"} project-card rounded-xl border overflow-hidden flex flex-col`}
+          style={`transition-delay: ${(index % 2) * 60}ms`}
         >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
+          <div class="project-img-wrap relative overflow-hidden border-b">
+            <img src={image} alt={name} class="project-img absolute inset-0 w-full h-full block" loading="lazy" />
+          </div>
+
+          <div class="p-5 flex flex-col flex-1">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="font-semibold text-white text-sm leading-snug flex-1">{name}</h3>
+              <span class="tech-label shrink-0 text-xs font-medium px-2 py-1 rounded-md">
+                {techLabels[index % techLabels.length]}
+              </span>
+            </div>
+
+            <p class="text-neutral/75 text-sm leading-relaxed flex-1 mb-5">{summary}</p>
+
+            <div class="flex gap-4 pt-4 border-t">
+              {linkSource && (
                 <a
                   href={linkSource}
                   target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-sm font-medium text-primary/70 hover:text-primary transition-colors duration-200 flex items-center gap-1.5"
                 >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                  </svg>
                   Source
                 </a>
+              )}
+              {linkPreview && (
                 <a
                   href={linkPreview}
                   target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-sm font-medium text-primary/70 hover:text-primary transition-colors duration-200 flex items-center gap-1.5"
                 >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
                   Preview
                 </a>
-              </div>
-            </div>
-            <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-top-left sm:h-[85%] sm:w-full"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
+              )}
             </div>
           </div>
         </div>
-      );
-    })
-  }
+      ))
+    }
+  </div>
 </Section>
+
+<style>
+  .project-card {
+    background: var(--card-bg);
+    border-color: var(--border);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.3),
+                0 0 28px rgba(59, 130, 246, 0.12),
+                0 20px 40px rgba(0, 0, 0, 0.35),
+                0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(59, 130, 246, 0.25);
+  }
+  .project-card .border-b {
+    border-color: var(--border-subtle);
+  }
+  .project-card .border-t {
+    border-color: var(--border-subtle);
+  }
+
+  .project-img-wrap {
+    height: 190px;
+    background: var(--img-bg);
+  }
+  @media (min-width: 640px) {
+    .project-img-wrap { height: 230px; }
+  }
+  .project-img {
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.88;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s ease;
+    will-change: transform;
+  }
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  .tech-label {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--body);
+    opacity: 0.8;
+  }
+</style>

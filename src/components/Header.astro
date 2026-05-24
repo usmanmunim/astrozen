@@ -9,51 +9,76 @@ const { siteLogo, navLinks } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6"
+  class="sticky top-0 z-50 w-full animate-slide-in flex items-center justify-between px-6 py-3 border-b border-white/5 backdrop-blur-xl" style="background-color: var(--header-bg);"
 >
-  <a href="/" aria-label="Home link">
-    <Image
-      class="rounded-full"
-      src={siteLogo}
-      width="45"
-      height="45"
-      alt="website logo"
-    />
+  <a href="/" aria-label="Home link" class="flex items-center gap-3 group">
+    <div class="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/25 transition-all duration-200 shrink-0">
+      <Image
+        class="w-full h-full object-cover object-center block scale-[0.99]"
+        src={siteLogo}
+        width="36"
+        height="36"
+        alt="Muhammad Usman"
+      />
+    </div>
   </a>
 
-  <button
-    type="button"
-    id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <Menu />
-  </button>
+  <div class="flex items-center gap-2">
+    <!-- Theme toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
 
-  <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
-    id="main-menu"
-  >
-    <ul class="gap-2 sm:flex">
-      {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
-              href={link.href}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <!-- Hamburger (all screen sizes) -->
+    <button
+      type="button"
+      id="menu-button"
+      class="px-1.5 text-neutral"
+      aria-expanded="false"
+      aria-controls="main-menu"
+    >
+      <Menu />
+    </button>
+
+    <!-- Dropdown nav -->
+    <nav
+      class="absolute top-16 right-5 hidden rounded-2xl border backdrop-blur-xl px-4 py-4 shadow-xl min-w-[160px]"
+      id="main-menu"
+      style="background-color: var(--menu-bg); border-color: var(--border);"
+    >
+      <ul class="flex flex-col gap-1">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                class="nav-item relative block px-3 py-2 text-sm font-medium text-neutral rounded-lg transition-all duration-200 hover:text-white hover:bg-white/5"
+                href={link.href}
+              >
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>
-  // Toggle mobile menu
+  // Mobile menu toggle
   const button = document.querySelector("#menu-button");
   const menu = document.querySelector("#main-menu");
   const navItems = document.querySelectorAll("#main-menu > ul > li > a");
@@ -65,47 +90,76 @@ const { siteLogo, navLinks } = Astro.props;
   };
 
   button?.addEventListener("click", toggleMenu);
-  navItems.forEach((item) => {
-    item?.addEventListener("click", toggleMenu);
-  });
+  navItems.forEach((item) => item?.addEventListener("click", toggleMenu));
 
-  // Update navigation based on scroll position with Intersection Observer
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
-            } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
-            }
-          });
-        }
-      });
-    },
-    { threshold: 0.5 },
-  );
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+  const OFFSET = 80;
 
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
+  function updateActiveNav() {
+    const scrollY = window.scrollY;
+    let activeId = sections[0]?.id ?? "";
 
-  // Cleanup observer
-  document.onvisibilitychange = () => {
-    if (document.visibilityState === "hidden") {
-      observer.disconnect();
-    } else {
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
+    for (const section of sections) {
+      if (scrollY >= (section as HTMLElement).offsetTop - OFFSET) {
+        activeId = section.id;
+      }
     }
-  };
+
+    navItems.forEach((item) => {
+      const isActive = item.getAttribute("href") === `#${activeId}`;
+      item.classList.toggle("text-white", isActive);
+      item.classList.toggle("bg-white/5", isActive);
+      item.classList.toggle("text-neutral", !isActive);
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // Theme toggle
+  const themeBtn = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  function applyTheme(theme: string) {
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }
+
+  themeBtn?.addEventListener("click", () => {
+    const current = html.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
 </script>
 
 <style>
-  header {
-    animation-timeline: scroll();
-    animation-range: 0 650px;
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    color: var(--toggle-color);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
   }
+  .theme-toggle:hover {
+    transform: scale(1.08) rotate(12deg);
+    color: var(--heading);
+  }
+  .theme-toggle:active {
+    transform: scale(0.95);
+  }
+
+  /* Show sun in dark mode, moon in light mode */
+  :global([data-theme="dark"]) .icon-sun { display: block; }
+  :global([data-theme="dark"]) .icon-moon { display: none; }
+  :global([data-theme="light"]) .icon-sun { display: none; }
+  :global([data-theme="light"]) .icon-moon { display: block; }
 </style>

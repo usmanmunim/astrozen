@@ -1,0 +1,105 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0505"/>
+      <stop offset="100%" stop-color="#1a0808"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg7)"/>
+  <circle cx="700" cy="380" r="140" fill="#e11d48" opacity="0.04"/>
+
+  <!-- Two-pane layout: left = terminal, right = dashboard -->
+  <!-- Left terminal pane -->
+  <rect x="40" y="30" width="400" height="390" rx="8" fill="#0d1117" stroke="#1f1015" stroke-width="1.5"/>
+  <rect x="40" y="30" width="400" height="32" rx="8" fill="#161b22"/>
+  <rect x="40" y="50" width="400" height="12" fill="#161b22"/>
+  <circle cx="64" cy="46" r="7" fill="#ef4444" opacity="0.8"/>
+  <circle cx="86" cy="46" r="7" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="108" cy="46" r="7" fill="#22c55e" opacity="0.8"/>
+  <text x="240" y="50" text-anchor="middle" fill="#6b7280" font-size="10">root@rocky-server: ~</text>
+
+  <text x="58" y="80" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="96" fill="#e11d48" font-size="10">hostnamectl set-hostname rocky-server.apu.edu.my</text>
+
+  <text x="58" y="116" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="132" fill="#e11d48" font-size="10">dnf install bind bind-utils -y</text>
+  <text x="58" y="148" fill="#6b7280" font-size="10">Last metadata expiration check...</text>
+  <text x="58" y="164" fill="#4ade80" font-size="10">Package bind-9.16 installed successfully.</text>
+
+  <text x="58" y="184" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="200" fill="#e11d48" font-size="10">nano /etc/named.conf</text>
+
+  <text x="58" y="220" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="236" fill="#e11d48" font-size="10">systemctl enable --now named</text>
+  <text x="58" y="252" fill="#4ade80" font-size="10">Created symlink: named.service → enabled</text>
+
+  <text x="58" y="272" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="288" fill="#e11d48" font-size="10">dig @localhost apu.edu.my</text>
+  <text x="58" y="304" fill="#6b7280" font-size="10">; &lt;&lt;&gt;&gt; DiG 9.16 &lt;&lt;&gt;&gt; @localhost apu.edu.my</text>
+  <text x="58" y="320" fill="#6b7280" font-size="10">;; ANSWER SECTION:</text>
+  <text x="58" y="336" fill="#4ade80" font-size="10">apu.edu.my.     IN  A  192.168.100.10</text>
+
+  <text x="58" y="356" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <text x="58" y="372" fill="#e11d48" font-size="10">firewall-cmd --add-service=dns --permanent</text>
+  <text x="58" y="388" fill="#4ade80" font-size="10">success</text>
+
+  <text x="58" y="408" fill="#be123c" font-size="10">[root@rocky-server ~]#</text>
+  <rect x="280" y="400" width="8" height="14" fill="#e11d48" opacity="0.9"/>
+
+  <!-- Right dashboard pane -->
+  <rect x="454" y="30" width="306" height="390" rx="8" fill="#0d1117" stroke="#1f1015" stroke-width="1.5"/>
+  <rect x="454" y="30" width="306" height="32" rx="8" fill="#161b22"/>
+  <rect x="454" y="50" width="306" height="12" fill="#161b22"/>
+  <text x="607" y="50" text-anchor="middle" fill="#6b7280" font-size="10">Server Status</text>
+
+  <text x="470" y="78" fill="#9ca3af" font-size="10" font-weight="700">SERVICES</text>
+
+  <!-- Service rows -->
+  <rect x="462" y="84" width="290" height="24" rx="4" fill="#0f172a"/>
+  <circle cx="476" cy="96" r="5" fill="#22c55e"/>
+  <text x="490" y="100" fill="#e2e8f0" font-size="10">named (DNS)</text>
+  <text x="742" y="100" text-anchor="end" fill="#4ade80" font-size="9">RUNNING</text>
+
+  <rect x="462" y="112" width="290" height="24" rx="4" fill="#111827"/>
+  <circle cx="476" cy="124" r="5" fill="#22c55e"/>
+  <text x="490" y="128" fill="#e2e8f0" font-size="10">httpd (Web)</text>
+  <text x="742" y="128" text-anchor="end" fill="#4ade80" font-size="9">RUNNING</text>
+
+  <rect x="462" y="140" width="290" height="24" rx="4" fill="#0f172a"/>
+  <circle cx="476" cy="152" r="5" fill="#22c55e"/>
+  <text x="490" y="156" fill="#e2e8f0" font-size="10">postfix (Mail)</text>
+  <text x="742" y="156" text-anchor="end" fill="#4ade80" font-size="9">RUNNING</text>
+
+  <rect x="462" y="168" width="290" height="24" rx="4" fill="#111827"/>
+  <circle cx="476" cy="180" r="5" fill="#f59e0b"/>
+  <text x="490" y="184" fill="#e2e8f0" font-size="10">sshd</text>
+  <text x="742" y="184" text-anchor="end" fill="#fbbf24" font-size="9">ACTIVE</text>
+
+  <text x="470" y="214" fill="#9ca3af" font-size="10" font-weight="700">NETWORK</text>
+  <rect x="462" y="220" width="290" height="70" rx="4" fill="#0f172a" stroke="#1f2937" stroke-width="1"/>
+  <text x="478" y="236" fill="#6b7280" font-size="9">Interface   IP Address       Status</text>
+  <line x1="462" y1="240" x2="752" y2="240" stroke="#1f2937" stroke-width="1"/>
+  <text x="478" y="252" fill="#e2e8f0" font-size="9">eth0        192.168.100.10   UP</text>
+  <text x="478" y="266" fill="#e2e8f0" font-size="9">lo          127.0.0.1        UP</text>
+  <text x="478" y="280" fill="#6b7280" font-size="9">Gateway: 192.168.100.1</text>
+
+  <text x="470" y="310" fill="#9ca3af" font-size="10" font-weight="700">RESOURCE USAGE</text>
+  <!-- CPU bar -->
+  <text x="470" y="326" fill="#6b7280" font-size="9">CPU</text>
+  <rect x="500" y="318" width="236" height="10" rx="3" fill="#1f2937"/>
+  <rect x="500" y="318" width="68" height="10" rx="3" fill="#e11d48" opacity="0.7"/>
+  <text x="742" y="326" text-anchor="end" fill="#fb7185" font-size="9">29%</text>
+  <!-- RAM bar -->
+  <text x="470" y="344" fill="#6b7280" font-size="9">RAM</text>
+  <rect x="500" y="336" width="236" height="10" rx="3" fill="#1f2937"/>
+  <rect x="500" y="336" width="142" height="10" rx="3" fill="#e11d48" opacity="0.5"/>
+  <text x="742" y="344" text-anchor="end" fill="#fb7185" font-size="9">60%</text>
+  <!-- Disk bar -->
+  <text x="470" y="362" fill="#6b7280" font-size="9">DISK</text>
+  <rect x="500" y="354" width="236" height="10" rx="3" fill="#1f2937"/>
+  <rect x="500" y="354" width="94" height="10" rx="3" fill="#e11d48" opacity="0.4"/>
+  <text x="742" y="362" text-anchor="end" fill="#fb7185" font-size="9">40%</text>
+
+  <text x="470" y="394" fill="#9ca3af" font-size="9">OS: Rocky Linux 9 · VirtualBox · Uptime: 3d 14h</text>
+</svg>

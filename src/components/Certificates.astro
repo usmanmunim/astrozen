@@ -1,0 +1,155 @@
+---
+import Section from "./Section.astro";
+import type { CertificateProps } from "@types";
+
+interface Props {
+  certificates: CertificateProps[];
+}
+
+const { certificates } = Astro.props;
+
+const issuerColors: Record<string, string> = {
+  "Red Hat":                              "#ee0000",
+  "Cisco Networking Academy":             "#1ba0d7",
+  "Ericsson":                             "#0082f0",
+  "Digital Nasional Berhad & Ericsson":   "#0082f0",
+  "DNB & Ericsson":                       "#0082f0",
+  "Microsoft":                            "#00a4ef",
+};
+---
+
+<Section text="Certificates" href="certificates">
+  <div class="grid sm:grid-cols-2 gap-5">
+    {
+      certificates.map(({ name, issuer, image, link, links }, index) => {
+        const color = issuerColors[issuer] ?? "#3b82f6";
+        const Tag = link ? "a" : "div";
+        return (
+          <Tag
+            class={`${index % 2 === 0 ? "reveal-left" : "reveal-right"} cert-card rounded-xl border overflow-hidden flex flex-col`}
+            style={`transition-delay: ${(index % 2) * 60}ms`}
+            {...(link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            <div class="cert-img-wrap relative overflow-hidden">
+              <img src={image} alt={name} class="cert-img absolute inset-0 w-full h-full block" loading="lazy" />
+            </div>
+
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <h3 class="cert-name flex-1">{name}</h3>
+                <span
+                  class="cert-badge shrink-0"
+                  style={`color: ${color}; border-color: ${color}40; background: ${color}12;`}
+                >
+                  {issuer}
+                </span>
+              </div>
+
+              {link && (
+                <div class="flex pt-4 border-t mt-auto">
+                  <span class="cert-link" style={`color: ${color}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                    View Certificate
+                  </span>
+                </div>
+              )}
+
+              {!link && links && links.length > 0 && (
+                <div class="flex flex-wrap gap-4 pt-4 border-t mt-auto">
+                  {links.map(({ text, href }) =>
+                    href ? (
+                      <a href={href} target="_blank" rel="noopener noreferrer" class="cert-link" style={`color: ${color}`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                        {text}
+                      </a>
+                    ) : (
+                      <span class="cert-link" style={`color: ${color}; opacity: 0.4`}>{text}</span>
+                    )
+                  )}
+                </div>
+              )}
+            </div>
+          </Tag>
+        );
+      })
+    }
+  </div>
+</Section>
+
+<style>
+  .cert-card {
+    background: var(--card-bg);
+    border-color: var(--border);
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease, background 0.3s ease;
+    will-change: transform;
+  }
+  .cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25),
+                0 0 22px rgba(59, 130, 246, 0.1),
+                0 20px 40px rgba(0, 0, 0, 0.35),
+                0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .cert-img-wrap {
+    height: 150px;
+    border-color: var(--border-subtle);
+  }
+  @media (min-width: 640px) {
+    .cert-img-wrap { height: 180px; }
+  }
+  .cert-img {
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.9;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    will-change: transform;
+  }
+  .cert-card:hover .cert-img {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
+  .cert-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--heading);
+    line-height: 1.4;
+  }
+
+  .cert-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .cert-card .border-t {
+    border-color: var(--border-subtle);
+  }
+
+  .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    opacity: 0.75;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .cert-card:hover .cert-link {
+    opacity: 1;
+  }
+</style>

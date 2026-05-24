@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage();
+await p.setViewportSize({ width: 1280, height: 900 });
+await p.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
+await p.addStyleTag({ content: '.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}' });
+await p.evaluate(() => document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(e => e.classList.add('visible')));
+await p.waitForTimeout(800);
+await p.waitForTimeout(500);
+await p.screenshot({ path: 'C:/Users/MUHAMM~1/AppData/Local/Temp/certs-visible.png', fullPage: true });
+await b.close();
+console.log('done');

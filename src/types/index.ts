@@ -8,10 +8,32 @@ export interface SiteConfig extends HeaderProps {
   canonicalURL?: string;
 }
 
+export interface SkillGroup {
+  group: string;
+  items: string[];
+}
+
+export interface CertificateLink {
+  text: string;
+  href?: string;
+}
+
+export interface CertificateProps {
+  name: string;
+  issuer: string;
+  image?: string;
+  link?: string;
+  date?: string;
+  details?: string[];
+  links?: CertificateLink[];
+}
+
 export interface SiteContent {
   hero: HeroProps;
   experience: ExperienceProps[];
+  skills: SkillGroup[];
   projects: ProjectProps[];
+  certificates: CertificateProps[];
   about: AboutProps;
 }
 

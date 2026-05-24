@@ -1,0 +1,56 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f0a"/>
+      <stop offset="100%" stop-color="#0f1f0f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg3)"/>
+  <circle cx="680" cy="80" r="130" fill="#16a34a" opacity="0.05"/>
+
+  <!-- Terminal window -->
+  <rect x="60" y="40" width="680" height="370" rx="10" fill="#0d1117" stroke="#1a2e1a" stroke-width="1.5"/>
+  <!-- Title bar -->
+  <rect x="60" y="40" width="680" height="36" rx="10" fill="#161b22"/>
+  <rect x="60" y="56" width="680" height="20" fill="#161b22"/>
+  <circle cx="88" cy="58" r="7" fill="#ef4444" opacity="0.8"/>
+  <circle cx="112" cy="58" r="7" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="136" cy="58" r="7" fill="#22c55e" opacity="0.8"/>
+  <text x="400" y="62" text-anchor="middle" fill="#6b7280" font-size="11">university_management.py — Python 3.11</text>
+
+  <!-- Terminal content -->
+  <text x="88" y="98" fill="#22c55e" font-size="11">University Management System v2.0</text>
+  <text x="88" y="114" fill="#374151" font-size="11">================================================</text>
+
+  <text x="88" y="134" fill="#86efac" font-size="11">  [1]  Manage Students</text>
+  <text x="88" y="150" fill="#86efac" font-size="11">  [2]  Manage Enrolments</text>
+  <text x="88" y="166" fill="#86efac" font-size="11">  [3]  Grade Management</text>
+  <text x="88" y="182" fill="#86efac" font-size="11">  [4]  Reports &amp; Analytics</text>
+  <text x="88" y="198" fill="#86efac" font-size="11">  [5]  Admin Panel</text>
+  <text x="88" y="214" fill="#4b5563" font-size="11">  [0]  Exit</text>
+  <text x="88" y="230" fill="#374151" font-size="11">------------------------------------------------</text>
+
+  <text x="88" y="248" fill="#16a34a" font-size="11">Enter choice: </text>
+  <text x="218" y="248" fill="#4ade80" font-size="11">3</text>
+
+  <text x="88" y="268" fill="#22c55e" font-size="11">Loading Grade Management...</text>
+  <text x="88" y="284" fill="#374151" font-size="11">------------------------------------------------</text>
+
+  <!-- Grade table output -->
+  <text x="88" y="304" fill="#4b5563" font-size="10">ID          Name              Module         Grade   GPA</text>
+  <text x="88" y="318" fill="#4b5563" font-size="10">----------  ----------------  -----------    -----   ---</text>
+  <text x="88" y="332" fill="#86efac" font-size="10">TP065821    Ahmad Razif       CT058-JAVA     B+      3.3</text>
+  <text x="88" y="346" fill="#86efac" font-size="10">TP072394    Siti Aisyah       CT058-JAVA     A-      3.7</text>
+  <text x="88" y="360" fill="#f87171" font-size="10">TP080112    Raj Kumar         CT099-OOP      D+      1.3</text>
+  <text x="88" y="374" fill="#86efac" font-size="10">TP059847    Lee Wei Xin       CT058-JAVA     C       2.0</text>
+
+  <text x="88" y="394" fill="#16a34a" font-size="11">admin@unimanage:~$</text>
+  <rect x="260" y="384" width="8" height="14" fill="#22c55e" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0;0.9" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Side decoration -->
+  <rect x="706" y="76" width="34" height="334" fill="#0d1117"/>
+  <rect x="706" y="76" width="34" height="60" rx="2" fill="#1a2e1a" opacity="0.8"/>
+</svg>

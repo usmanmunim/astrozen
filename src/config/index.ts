@@ -1,99 +1,157 @@
-import type { SiteConfig, SiteContent } from "../types";
+﻿import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Muhammad Usman | CS Student & Developer",
+  author: "Muhammad Usman",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "CS student at APU Malaysia. I build Flutter apps, write Python and Java, and spend too much time in Linux terminals. Looking for an internship.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/header.jpg",
+
   navLinks: [
+    { text: "Home", href: "#home" },
     { text: "Experience", href: "#experience" },
+    { text: "Skills", href: "#skills" },
     { text: "Projects", href: "#projects" },
+    { text: "Certificates", href: "#certificates" },
     { text: "About", href: "#about" },
   ],
+
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "Email", href: "mailto:usmanmunim30@gmail.com" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-usman-9712b7336/" },
+    { text: "GitHub", href: "https://github.com/usmanmunim" },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+
+  socialImage: "/profile.jpg",
+  canonicalURL: "https://astrozen.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Muhammad Usman",
+    specialty: "Computer Science Student",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Computer Science student at Asia Pacific University, Kuala Lumpur, with hands-on experience in Flutter app development, C, C++, Java, Python, and Linux server configuration. I am seeking an internship where I can contribute to real-world projects and continue developing my technical skills.",
+    email: "usmanmunim30@gmail.com",
   },
+
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Asia Pacific University",
+      position: "Technical Assistant Trainee",
+      startDate: "Sep 2025",
+      endDate: "Nov 2025",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Helped students and staff fix everyday IT issues: crashed computers, broken logins, software not loading. Not glamorous, but I learned how a real lab environment runs.",
+        "Diagnosed hardware and software problems across classroom PCs and lab machines. Got good at spotting issues fast.",
+        "Kept daily IT operations running smoothly so classes weren't disrupted. Basically on-call for anything that went wrong.",
       ],
-    },
-    {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
-      summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
-      ],
-    },
-    {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "An AI chatbot project using Python, NLP concepts, and conversational flows to handle property inquiries, user preferences, and recommendation-style responses.",
-      linkPreview: "/",
-      linkSource: "https://github.com/usmanmunim",
-      image: "/zen-og.png",
-    },
-    {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
-    },
-    {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
-    },
-    {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
     },
   ],
+
+  skills: [
+    {
+      group: "Development",
+      items: ["Flutter", "Firebase", "Java", "Python", "C", "CSV / File Handling"],
+    },
+    {
+      group: "Systems & Networking",
+      items: ["Linux Admin", "Rocky Linux", "Ubuntu", "DNS", "Cisco Packet Tracer", "Subnetting"],
+    },
+    {
+      group: "Professional",
+      items: ["Technical Support", "Troubleshooting", "Documentation", "Lab Support"],
+    },
+  ],
+
+  projects: [
+    {
+      name: "UniBudget+ Flutter & Firebase",
+      summary:
+        "A budget app for students, built with Flutter and Firebase. Has role-based logins, expense tracking, charts, funding requests, and dark mode. Started as a uni assignment, ended up actually using it.",
+      linkSource: "https://github.com/usmanmunim",
+      image: "/project-unibudget.png",
+    },
+    {
+      name: "Course Recovery System",
+      summary:
+        "A Java Swing desktop app for managing course recovery applications. Students can check eligibility, submit OTP-verified requests, and recover failed modules. Built around OOP from scratch.",
+      linkSource: "https://github.com/usmanmunim/Java-Course-Recovery-System",
+      image: "/project-course-recovery.png",
+    },
+    {
+      name: "University Management System",
+      summary:
+        "A Python CLI system for managing student records, enrolments, and grades. Uses CSV files for storage, no database, just file handling and role-based menus.",
+      linkSource: "https://github.com/usmanmunim/University-Management-System",
+      image: "/project-uni-management.svg",
+    },
+    {
+      name: "Inventory Management System",
+      summary:
+        "A C program for tracking product stock, prices, and reports. Modular code with file I/O, no libraries, all manual. One of the harder projects to debug.",
+      linkSource: "https://github.com/usmanmunim/Inventory-Management-System",
+      image: "/project-inventory.png",
+    },
+    {
+      name: "AI Chatbot for Property Agents",
+      summary:
+        "A Python chatbot that handles property inquiries using basic NLP. Not GPT, more like pattern matching and intent detection. Learned a lot about how chatbots actually work.",
+      linkSource: "https://github.com/usmanmunim",
+      image: "/project-chatbot.svg",
+    },
+    {
+      name: "Network Design & Simulation",
+      summary:
+        "Designed a multi-subnet LAN/WAN network in Cisco Packet Tracer. Covers routing, switching, VLANs, and subnetting. Spent way too long getting the routing tables right.",
+      linkSource: "https://github.com/usmanmunim/Cisco-Packet-Tracer-Network-Project",
+      image: "/project-network.svg",
+    },
+    {
+      name: "Linux Server Administration",
+      summary:
+        "Set up a Linux server from scratch using Rocky Linux in VirtualBox. Configured DNS, web hosting, email, user accounts, and firewall rules. Broke it multiple times, fixed it every time.",
+      linkSource: "https://github.com/usmanmunim",
+      image: "/project-linux.svg",
+    },
+  ],
+
+  certificates: [
+    {
+      name: "Red Hat System Administration I (RH124)",
+      issuer: "Red Hat",
+      image: "/cert-redhat.png",
+    },
+    {
+      name: "CCNA: Introduction to Networks",
+      issuer: "Cisco Networking Academy",
+      image: "/cert-cisco.png",
+    },
+    {
+      name: "5G Pioneers Program MY5G Ericsson Malaysia",
+      issuer: "DNB & Ericsson",
+      image: "/cert-5g1.png",
+      links: [
+        { text: "View Module 01", href: "/cert-5g1.png" },
+        { text: "View Module 03", href: "/cert-5g2.png" },
+      ],
+    },
+    {
+      name: "Microsoft Office Specialist: Word 2019 Associate",
+      issuer: "Microsoft",
+      image: "/cert-mircosoft.png",
+    },
+  ],
+
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      I am a Computer Science student at Asia Pacific University in Kuala Lumpur, Malaysia, with a strong interest in software development and mobile application development.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      I have hands-on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
+
+      Through my projects, I have learned to solve problems, debug issues, work with different technologies, and build user-focused solutions. I am currently looking for an internship where I can contribute to real-world projects, learn from experienced developers, and continue improving as a software developer.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/profile.jpg",
   },
 };
-
-// #5755ff
