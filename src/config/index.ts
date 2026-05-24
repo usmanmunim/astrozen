@@ -6,7 +6,7 @@ export const SITE_CONFIG: SiteConfig = {
   description:
     "CS student at APU Malaysia. I build Flutter apps, write Python and Java, and work with Linux servers. Passionate about building practical software.",
   lang: "en",
-  siteLogo: "/Header.jpg",
+  siteLogo: "/header.jpg",
   statusColor: "#22c55e",
 
   navLinks: [
