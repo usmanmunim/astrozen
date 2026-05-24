@@ -28,9 +28,17 @@ export interface CertificateProps {
   links?: CertificateLink[];
 }
 
+export interface EducationProps {
+  institution: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
+}
+
 export interface SiteContent {
   hero: HeroProps;
   experience: ExperienceProps[];
+  education: EducationProps[];
   skills: SkillGroup[];
   projects: ProjectProps[];
   certificates: CertificateProps[];
@@ -68,4 +76,5 @@ export interface AboutProps {
 export interface HeaderProps {
   siteLogo: string;
   navLinks: { text: string; href: string }[];
+  statusColor?: string;
 }

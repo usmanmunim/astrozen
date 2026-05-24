@@ -11,8 +11,6 @@ const { certificates } = Astro.props;
 const issuerColors: Record<string, string> = {
   "Red Hat":                              "#ee0000",
   "Cisco Networking Academy":             "#1ba0d7",
-  "Ericsson":                             "#0082f0",
-  "Digital Nasional Berhad & Ericsson":   "#0082f0",
   "DNB & Ericsson":                       "#0082f0",
   "Microsoft":                            "#00a4ef",
 };
@@ -23,14 +21,12 @@ const issuerColors: Record<string, string> = {
     {
       certificates.map(({ name, issuer, image, link, links }, index) => {
         const color = issuerColors[issuer] ?? "#3b82f6";
-        const Tag = link ? "a" : "div";
         return (
-          <Tag
+          <div
             class={`${index % 2 === 0 ? "reveal-left" : "reveal-right"} cert-card rounded-xl border overflow-hidden flex flex-col`}
             style={`transition-delay: ${(index % 2) * 60}ms`}
-            {...(link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {})}
           >
-            <div class="cert-img-wrap relative overflow-hidden">
+            <div class="cert-img-wrap relative overflow-hidden border-b">
               <img src={image} alt={name} class="cert-img absolute inset-0 w-full h-full block" loading="lazy" />
             </div>
 
@@ -47,12 +43,12 @@ const issuerColors: Record<string, string> = {
 
               {link && (
                 <div class="flex pt-4 border-t mt-auto">
-                  <span class="cert-link" style={`color: ${color}`}>
+                  <a href={link} target="_blank" rel="noopener noreferrer" class="cert-link">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
                     View Certificate
-                  </span>
+                  </a>
                 </div>
               )}
 
@@ -60,20 +56,20 @@ const issuerColors: Record<string, string> = {
                 <div class="flex flex-wrap gap-4 pt-4 border-t mt-auto">
                   {links.map(({ text, href }) =>
                     href ? (
-                      <a href={href} target="_blank" rel="noopener noreferrer" class="cert-link" style={`color: ${color}`}>
+                      <a href={href} target="_blank" rel="noopener noreferrer" class="cert-link">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M7 17L17 7M17 7H7M17 7v10" />
                         </svg>
                         {text}
                       </a>
                     ) : (
-                      <span class="cert-link" style={`color: ${color}; opacity: 0.4`}>{text}</span>
+                      <span class="cert-link" style="opacity: 0.4">{text}</span>
                     )
                   )}
                 </div>
               )}
             </div>
-          </Tag>
+          </div>
         );
       })
     }
@@ -82,6 +78,7 @@ const issuerColors: Record<string, string> = {
 
 <style>
   .cert-card {
+    min-height: 300px;
     background: var(--card-bg);
     border-color: var(--border);
     text-decoration: none;
@@ -104,6 +101,7 @@ const issuerColors: Record<string, string> = {
     border-color: var(--border-subtle);
   }
   @media (min-width: 640px) {
+    .cert-card     { min-height: 360px; }
     .cert-img-wrap { height: 180px; }
   }
   .cert-img {
@@ -145,6 +143,7 @@ const issuerColors: Record<string, string> = {
     gap: 5px;
     font-size: 0.8125rem;
     font-weight: 500;
+    color: #3b82f6;
     opacity: 0.75;
     text-decoration: none;
     transition: opacity 0.2s ease;

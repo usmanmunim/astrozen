@@ -5,21 +5,29 @@ import type { HeaderProps } from "@types";
 
 type Props = HeaderProps;
 
-const { siteLogo, navLinks } = Astro.props;
+const { siteLogo, navLinks, statusColor } = Astro.props;
 ---
 
 <header
   class="sticky top-0 z-50 w-full animate-slide-in flex items-center justify-between px-6 py-3 border-b border-white/5 backdrop-blur-xl" style="background-color: var(--header-bg);"
 >
   <a href="/" aria-label="Home link" class="flex items-center gap-3 group">
-    <div class="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/25 transition-all duration-200 shrink-0">
-      <Image
-        class="w-full h-full object-cover object-center block scale-[0.99]"
-        src={siteLogo}
-        width="36"
-        height="36"
-        alt="Muhammad Usman"
-      />
+    <div class="relative w-9 h-9 shrink-0">
+      <div class="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/25 transition-all duration-200">
+        <Image
+          class="w-full h-full object-cover object-center block scale-[0.99]"
+          src={siteLogo}
+          width="36"
+          height="36"
+          alt="Muhammad Usman"
+        />
+      </div>
+      {statusColor && (
+        <span
+          class="status-dot"
+          style={`background-color: ${statusColor};`}
+        ></span>
+      )}
     </div>
   </a>
 
@@ -132,6 +140,16 @@ const { siteLogo, navLinks } = Astro.props;
 </script>
 
 <style>
+
+  .status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--header-bg);
+  }
 
   .theme-toggle {
     display: flex;

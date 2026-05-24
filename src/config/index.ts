@@ -4,12 +4,14 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Muhammad Usman | CS Student & Developer",
   author: "Muhammad Usman",
   description:
-    "CS student at APU Malaysia. I build Flutter apps, write Python and Java, and spend too much time in Linux terminals. Looking for an internship.",
+    "CS student at APU Malaysia. I build Flutter apps, write Python and Java, and work with Linux servers. Passionate about building practical software.",
   lang: "en",
-  siteLogo: "/header.jpg",
+  siteLogo: "/Header.jpg",
+  statusColor: "#22c55e",
 
   navLinks: [
     { text: "Home", href: "#home" },
+    { text: "Education", href: "#education" },
     { text: "Experience", href: "#experience" },
     { text: "Skills", href: "#skills" },
     { text: "Projects", href: "#projects" },
@@ -30,9 +32,9 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Usman",
-    specialty: "Computer Science Student",
+    specialty: "Computer Science Student | Aspiring Software Developer",
     summary:
-      "Computer Science student at Asia Pacific University, Kuala Lumpur, with hands-on experience in Flutter app development, C, C++, Java, Python, and Linux server configuration. I am seeking an internship where I can contribute to real-world projects and continue developing my technical skills.",
+      "Computer Science student at Asia Pacific University, Kuala Lumpur, with hands on experience in Flutter app development, C, C++, Java, Python, and Linux server configuration. Passionate about building practical software and learning through real projects.",
     email: "usmanmunim30@gmail.com",
   },
 
@@ -50,10 +52,25 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
 
+  education: [
+    {
+      institution: "Asia Pacific University | Kuala Lumpur, Malaysia",
+      degree: "Bachelor of Computer Science",
+      startDate: "2024",
+      endDate: "Present",
+    },
+    {
+      institution: "NCC UK – TMUC Bahria Springs | Rawalpindi, Pakistan",
+      degree: "Level 3 International Foundation Diploma in Computer Science",
+      startDate: "2023",
+      endDate: "2024",
+    },
+  ],
+
   skills: [
     {
       group: "Development",
-      items: ["Flutter", "Firebase", "Java", "Python", "C", "CSV / File Handling"],
+      items: ["Flutter", "Firebase", "Java", "Python", "C", "C++", "CSV / File Handling"],
     },
     {
       group: "Systems & Networking",
@@ -69,44 +86,44 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "UniBudget+ Flutter & Firebase",
       summary:
-        "A budget app for students, built with Flutter and Firebase. Has role-based logins, expense tracking, charts, funding requests, and dark mode. Started as a uni assignment, ended up actually using it.",
-      linkSource: "https://github.com/usmanmunim",
+        "A student budget management app built with Flutter and Firebase, featuring role based login, expense tracking, analytics, funding requests, and dark mode.",
+      linkSource: "https://github.com/usmanmunim/UniBudgetPlus",
       image: "/project-unibudget.png",
     },
     {
       name: "Course Recovery System",
       summary:
-        "A Java Swing desktop app for managing course recovery applications. Students can check eligibility, submit OTP-verified requests, and recover failed modules. Built around OOP from scratch.",
-      linkSource: "https://github.com/usmanmunim/Java-Course-Recovery-System",
+        "A Java Swing desktop application for managing course recovery requests, eligibility checks, OTP verification, and student recovery plans using OOP principles.",
+      linkSource: "https://github.com/usmanmunim/Course-Recovery-System",
       image: "/project-course-recovery.png",
     },
     {
       name: "University Management System",
       summary:
-        "A Python CLI system for managing student records, enrolments, and grades. Uses CSV files for storage, no database, just file handling and role-based menus.",
+        "A Python CLI system for managing students, courses, enrolments, and grades using role based menus and CSV file storage.",
       linkSource: "https://github.com/usmanmunim/University-Management-System",
-      image: "/project-uni-management.svg",
+      image: "/project-uni-management.png",
     },
     {
       name: "Inventory Management System",
       summary:
-        "A C program for tracking product stock, prices, and reports. Modular code with file I/O, no libraries, all manual. One of the harder projects to debug.",
+        "A C based inventory management system for tracking products, stock levels, suppliers, transactions, and reports using modular programming and file handling.",
       linkSource: "https://github.com/usmanmunim/Inventory-Management-System",
       image: "/project-inventory.png",
     },
     {
       name: "AI Chatbot for Property Agents",
       summary:
-        "A Python chatbot that handles property inquiries using basic NLP. Not GPT, more like pattern matching and intent detection. Learned a lot about how chatbots actually work.",
+        "A real estate chatbot that handles property inquiries using basic NLP, intent detection, and predefined response flows.",
       linkSource: "https://github.com/usmanmunim",
-      image: "/project-chatbot.svg",
+      image: "/project-homy.png",
     },
     {
       name: "Network Design & Simulation",
       summary:
-        "Designed a multi-subnet LAN/WAN network in Cisco Packet Tracer. Covers routing, switching, VLANs, and subnetting. Spent way too long getting the routing tables right.",
+        "A multi subnet LAN and WAN network designed in Cisco Packet Tracer, covering routing, switching, VLANs, subnetting, and device configuration.",
       linkSource: "https://github.com/usmanmunim/Cisco-Packet-Tracer-Network-Project",
-      image: "/project-network.svg",
+      image: "/project-network.png",
     },
     {
       name: "Linux Server Administration",
@@ -122,11 +139,13 @@ export const SITE_CONTENT: SiteContent = {
       name: "Red Hat System Administration I (RH124)",
       issuer: "Red Hat",
       image: "/cert-redhat.png",
+      link: "/cert-redhat.png",
     },
     {
       name: "CCNA: Introduction to Networks",
       issuer: "Cisco Networking Academy",
       image: "/cert-cisco.png",
+      link: "/cert-cisco.png",
     },
     {
       name: "5G Pioneers Program MY5G Ericsson Malaysia",
@@ -140,7 +159,8 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Microsoft Office Specialist: Word 2019 Associate",
       issuer: "Microsoft",
-      image: "/cert-mircosoft.png",
+      image: "/cert-microsoft.png",
+      link: "/cert-microsoft.png",
     },
   ],
 
@@ -148,9 +168,9 @@ export const SITE_CONTENT: SiteContent = {
     description: `
       I am a Computer Science student at Asia Pacific University in Kuala Lumpur, Malaysia, with a strong interest in software development and mobile application development.
 
-      I have hands-on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
+      I have hands on experience building academic and practical projects using Flutter, Firebase, C, C++, Java, Python, and SQL. I have also worked with Linux server configuration, DNS setup, networking labs, and system administration tasks, which helped me understand how software and infrastructure work together.
 
-      Through my projects, I have learned to solve problems, debug issues, work with different technologies, and build user-focused solutions. I am currently looking for an internship where I can contribute to real-world projects, learn from experienced developers, and continue improving as a software developer.
+      Through my projects, I have learned to solve problems, debug issues, work with different technologies, and build user focused solutions.
     `,
     image: "/profile.jpg",
   },
