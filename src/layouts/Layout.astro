@@ -3,6 +3,7 @@ import Header from "@components/Header.astro";
 import { Font } from "astro:assets";
 import { SITE_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
+import Analytics from "@vercel/analytics/astro";
 
 const {
   title,
@@ -70,6 +71,7 @@ const ogImgUrl = canonicalURL + socialImage;
       </main>
       <Footer author={author} socialLinks={socialLinks} />
     </div>
+    <Analytics />
   </body>
 </html>
 
