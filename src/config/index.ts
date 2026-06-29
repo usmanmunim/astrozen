@@ -98,38 +98,39 @@ export const SITE_CONTENT: SiteContent = {
 
   projects: [
     {
-      name: "QueueCare — Flutter & Firebase",
+      name: "QueueCare",
       summary:
-        "A Flutter and Firebase smart queue management system for 3 roles (Patient, Receptionist, Doctor), with live queue tracking, QR check-in, appointment management, notifications, and real-time updates.",
-      linkSource: "#",
+        "A Flutter and Firebase mobile app for smart queue management, supporting 3 roles (Patient, Receptionist, Doctor) with live queue tracking, QR check-in, appointment management, notifications, and real-time updates.",
+      linkSource: "https://github.com/usmanmunim/queuecare",
+      image: "/project-queuecare.png",
     },
     {
-      name: "UniBudget+ — Flutter & Firebase",
+      name: "UniBudget+",
       summary:
         "A student budget management app built with Flutter and Firebase, featuring role based login, expense tracking, monthly budgets, analytics, funding requests, and a deployed web version via Firebase Hosting.",
       linkSource: "https://github.com/usmanmunim/UniBudgetPlus",
       image: "/project-unibudget.png",
     },
     {
-      name: "LearnQuest — ASP.NET & C#",
+      name: "LearnQuest",
       summary:
         "An interactive learning platform built with ASP.NET, C#, JavaScript, and TSQL, featuring user registration, login, learning content access, quizzes, progress tracking, and admin management.",
-      linkSource: "#",
+      linkSource: "https://github.com/usmanmunim/LearnQuest",
     },
     {
-      name: "NASM POS System — x86-64 Assembly",
+      name: "NASM POS System",
       summary:
         "A Point of Sale system built in NASM x86-64 Assembly Language on Ubuntu Linux, featuring login, inventory management, shopping cart, checkout, coupon discounts, and daily sales reporting.",
       linkSource: "#",
     },
     {
-      name: "Carbon Emission Analysis — C++",
+      name: "Warehouse Robot Navigation System",
       summary:
-        "A C++ carbon emission analysis system using core data structures, featuring sorting, searching, city comparison, and emission reporting with Bubble Sort, Insertion Sort, and Binary Search on real-world datasets.",
-      linkSource: "#",
+        "A C++ warehouse robot navigation system built in Visual Studio, implementing pathfinding and navigation algorithms to simulate robot movement and route planning in a warehouse environment.",
+      linkSource: "https://github.com/usmanmunim/Warehouse-Robot-Navigation-System",
     },
     {
-      name: "Course Recovery System — Java",
+      name: "Course Recovery System",
       summary:
         "A Java Swing desktop application for managing course recovery requests, eligibility checks, OTP verification, and student recovery plans applying OOP principles.",
       linkSource: "https://github.com/usmanmunim/Course-Recovery-System",
