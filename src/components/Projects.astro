@@ -27,9 +27,11 @@ const techLabels = [
           class={`${index % 2 === 0 ? "reveal-left" : "reveal-right"} project-card rounded-xl border overflow-hidden flex flex-col`}
           style={`transition-delay: ${(index % 2) * 60}ms`}
         >
-          <div class="project-img-wrap relative overflow-hidden border-b">
-            <img src={image} alt={name} class="project-img absolute inset-0 w-full h-full block" loading="lazy" />
-          </div>
+          {image && (
+            <div class="project-img-wrap relative overflow-hidden border-b">
+              <img src={image} alt={name} class="project-img absolute inset-0 w-full h-full block" loading="lazy" />
+            </div>
+          )}
 
           <div class="p-5 flex flex-col flex-1">
             <div class="flex items-start justify-between gap-3 mb-3">

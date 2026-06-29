@@ -98,7 +98,6 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "A Flutter and Firebase smart queue management system for 3 roles (Patient, Receptionist, Doctor), with live queue tracking, QR check-in, appointment management, notifications, and real-time updates.",
       linkSource: "#",
-      image: "/project-unibudget.png",
     },
     {
       name: "UniBudget+ — Flutter & Firebase",
@@ -112,21 +111,18 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "An interactive learning platform built with ASP.NET, C#, JavaScript, and TSQL, featuring user registration, login, learning content access, quizzes, progress tracking, and admin management.",
       linkSource: "#",
-      image: "/project-course-recovery.png",
     },
     {
       name: "NASM POS System — x86-64 Assembly",
       summary:
         "A Point of Sale system built in NASM x86-64 Assembly Language on Ubuntu Linux, featuring login, inventory management, shopping cart, checkout, coupon discounts, and daily sales reporting.",
       linkSource: "#",
-      image: "/project-inventory.png",
     },
     {
       name: "Carbon Emission Analysis — C++",
       summary:
         "A C++ carbon emission analysis system using core data structures, featuring sorting, searching, city comparison, and emission reporting with Bubble Sort, Insertion Sort, and Binary Search on real-world datasets.",
       linkSource: "#",
-      image: "/project-uni-management.png",
     },
     {
       name: "Course Recovery System — Java",
