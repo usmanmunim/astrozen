@@ -94,53 +94,53 @@ export const SITE_CONTENT: SiteContent = {
 
   projects: [
     {
-      name: "UniBudget+ Flutter & Firebase",
+      name: "QueueCare — Flutter & Firebase",
       summary:
-        "A student budget management app built with Flutter and Firebase, featuring role based login, expense tracking, analytics, funding requests, and dark mode.",
+        "A Flutter and Firebase smart queue management system for 3 roles (Patient, Receptionist, Doctor), with live queue tracking, QR check-in, appointment management, notifications, and real-time updates.",
+      linkSource: "#",
+      image: "/project-unibudget.png",
+    },
+    {
+      name: "UniBudget+ — Flutter & Firebase",
+      summary:
+        "A student budget management app built with Flutter and Firebase, featuring role based login, expense tracking, monthly budgets, analytics, funding requests, and a deployed web version via Firebase Hosting.",
       linkSource: "https://github.com/usmanmunim/UniBudgetPlus",
       image: "/project-unibudget.png",
     },
     {
-      name: "Course Recovery System",
+      name: "LearnQuest — ASP.NET & C#",
       summary:
-        "A Java Swing desktop application for managing course recovery requests, eligibility checks, OTP verification, and student recovery plans using OOP principles.",
+        "An interactive learning platform built with ASP.NET, C#, JavaScript, and TSQL, featuring user registration, login, learning content access, quizzes, progress tracking, and admin management.",
+      linkSource: "#",
+      image: "/project-course-recovery.png",
+    },
+    {
+      name: "NASM POS System — x86-64 Assembly",
+      summary:
+        "A Point of Sale system built in NASM x86-64 Assembly Language on Ubuntu Linux, featuring login, inventory management, shopping cart, checkout, coupon discounts, and daily sales reporting.",
+      linkSource: "#",
+      image: "/project-inventory.png",
+    },
+    {
+      name: "Carbon Emission Analysis — C++",
+      summary:
+        "A C++ carbon emission analysis system using core data structures, featuring sorting, searching, city comparison, and emission reporting with Bubble Sort, Insertion Sort, and Binary Search on real-world datasets.",
+      linkSource: "#",
+      image: "/project-uni-management.png",
+    },
+    {
+      name: "Course Recovery System — Java",
+      summary:
+        "A Java Swing desktop application for managing course recovery requests, eligibility checks, OTP verification, and student recovery plans applying OOP principles.",
       linkSource: "https://github.com/usmanmunim/Course-Recovery-System",
       image: "/project-course-recovery.png",
     },
     {
-      name: "University Management System",
+      name: "AI Chatbot for Property Agents",
       summary:
-        "A Python CLI system for managing students, courses, enrolments, and grades using role based menus and CSV file storage.",
-      linkSource: "https://github.com/usmanmunim/University-Management-System",
-      image: "/project-uni-management.png",
-    },
-    {
-      name: "Inventory Management System",
-      summary:
-        "A C based inventory management system for tracking products, stock levels, suppliers, transactions, and reports using modular programming and file handling.",
-      linkSource: "https://github.com/usmanmunim/Inventory-Management-System",
-      image: "/project-inventory.png",
-    },
-    {
-      name: "Homy Real Estate Chatbot",
-      summary:
-        "A real estate chatbot that handles property inquiries using basic NLP, intent detection, and predefined response flows.",
+        "A Python AI chatbot that handles property inquiries, user preferences, and recommendation flows using NLP and predefined conversational response automation.",
       linkSource: "https://github.com/usmanmunim/Homy-Real-Estate-Chatbot",
       image: "/project-homy.png",
-    },
-    {
-      name: "Network Design & Simulation",
-      summary:
-        "A multi-subnet LAN and WAN network designed in Cisco Packet Tracer, covering routing, switching, VLANs, subnetting, and device configuration.",
-      linkSource: "https://github.com/usmanmunim/Cisco-Packet-Tracer-Network-Project",
-      image: "/project-network.png",
-    },
-    {
-      name: "Linux Server Administration",
-      summary:
-        "Set up a Linux server from scratch using Rocky Linux in VirtualBox. Configured DNS, web hosting, email, user accounts, and firewall rules. Broke it multiple times, fixed it every time.",
-      linkSource: "https://github.com/usmanmunim/Linux-Server-Administration",
-      image: "/project-linux.svg",
     },
   ],
 
