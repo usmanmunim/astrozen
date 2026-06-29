@@ -3,7 +3,9 @@ import Section from "./Section.astro";
 import { SITE_CONTENT } from "@config";
 import {
   siPython, siFlutter, siFirebase, siC, siCplusplus,
-  siLinux, siUbuntu, siCisco, siRockylinux
+  siLinux, siUbuntu, siCisco, siRockylinux,
+  siDotnet, siSharp, siJavascript, siHtml5, siCss, siGithub,
+  siDart, siGit, siAndroidstudio, siVirtualbox, siSap, siApachenetbeanside
 } from "simple-icons";
 
 const { skills } = SITE_CONTENT;
@@ -38,6 +40,24 @@ const skillIcons: Record<string, IconDef> = {
     `<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/>`,
     "22c55e"
   ),
+  "Firestore": lineIcon(
+    `<path d="M4 20h16"/><path d="m6 20 4-16"/><path d="m14 20 4-16"/><path d="M5 8h14"/><path d="M4 14h16"/>`,
+    "FFCA28"
+  ),
+  "ASP.NET":   brandIcon(siDotnet),
+  "C#":        brandIcon(siSharp),
+  "JavaScript": brandIcon(siJavascript),
+  "HTML":      brandIcon(siHtml5),
+  "CSS":       brandIcon(siCss),
+  "SQL": lineIcon(
+    `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>`,
+    "CC2927"
+  ),
+  "T-SQL": lineIcon(
+    `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>`,
+    "e8432a"
+  ),
+  "GitHub":    { svgInner: `<path fill="currentColor" d="${siGithub.path}"/>`, hex: "94a3b8" },
   "Linux Admin":         brandIcon(siLinux),
   "Rocky Linux":         brandIcon(siRockylinux),
   "Ubuntu":              brandIcon(siUbuntu),
@@ -65,6 +85,40 @@ const skillIcons: Record<string, IconDef> = {
   "Lab Support": lineIcon(
     `<path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/>`,
     "10b981"
+  ),
+  "Teamwork": lineIcon(
+    `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    "6366f1"
+  ),
+  "Problem Solving": lineIcon(
+    `<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>`,
+    "f59e0b"
+  ),
+  "Communication": lineIcon(
+    `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+    "3b82f6"
+  ),
+  "Dart":               brandIcon(siDart),
+  "Git":                brandIcon(siGit),
+  "Android Studio":     brandIcon(siAndroidstudio),
+  "VirtualBox":         brandIcon(siVirtualbox),
+  "SAP ERP":            brandIcon(siSap),
+  "NetBeans":           brandIcon(siApachenetbeanside),
+  "OOP": lineIcon(
+    `<rect x="3" y="8" width="7" height="7" rx="1"/><path d="M14 8h7"/><path d="M14 12h7"/><path d="M14 16h7"/><path d="M3 3h18"/>`,
+    "8b5cf6"
+  ),
+  "Data Structures & Algorithms": lineIcon(
+    `<path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 3v3"/><path d="M12 15v6"/><path d="M6 15H3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/><path d="M12 15h6a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1z"/><path d="M9 6a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/>`,
+    "3b82f6"
+  ),
+  "Database Management": lineIcon(
+    `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>`,
+    "10b981"
+  ),
+  "Software Testing": lineIcon(
+    `<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+    "22c55e"
   ),
 };
 

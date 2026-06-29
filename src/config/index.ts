@@ -26,7 +26,7 @@ export const SITE_CONFIG: SiteConfig = {
   ],
 
   socialImage: "/profile.jpg",
-  canonicalURL: "https://astrozen.vercel.app",
+  canonicalURL: "https://muhammadusman.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
@@ -80,7 +80,7 @@ export const SITE_CONTENT: SiteContent = {
   skills: [
     {
       group: "Development",
-      items: ["Flutter", "Firebase", "Java", "Python", "C", "C++", "CSV / File Handling"],
+      items: ["Dart", "Flutter", "Firebase", "Firestore", "Java", "Python", "C", "C++", "ASP.NET", "C#", "JavaScript", "HTML", "CSS", "SQL"],
     },
     {
       group: "Systems & Networking",
@@ -88,7 +88,11 @@ export const SITE_CONTENT: SiteContent = {
     },
     {
       group: "Professional",
-      items: ["Technical Support", "Troubleshooting", "Documentation", "Lab Support"],
+      items: ["Technical Support", "Troubleshooting", "Documentation", "Git", "GitHub", "Android Studio", "VirtualBox", "SAP ERP", "NetBeans"],
+    },
+    {
+      group: "Concepts",
+      items: ["OOP", "Data Structures & Algorithms", "Database Management", "Software Testing"],
     },
   ],
 
