@@ -116,6 +116,7 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "An interactive learning platform built with ASP.NET, C#, JavaScript, and TSQL, featuring user registration, login, learning content access, quizzes, progress tracking, and admin management.",
       linkSource: "https://github.com/usmanmunim/LearnQuest",
+      image: "/project-LearnQuest.png",
     },
     {
       name: "NASM POS System",
