@@ -122,7 +122,8 @@ export const SITE_CONTENT: SiteContent = {
       name: "NASM POS System",
       summary:
         "A Point of Sale system built in NASM x86-64 Assembly Language on Ubuntu Linux, featuring login, inventory management, shopping cart, checkout, coupon discounts, and daily sales reporting.",
-      linkSource: "#",
+      linkSource: "https://github.com/usmanmunim/NASM-POS-System",
+      image: "/project-Nasm.png",
     },
     {
       name: "Warehouse Robot Navigation System",
