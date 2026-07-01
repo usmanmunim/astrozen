@@ -167,7 +167,7 @@ export const SITE_CONTENT: SiteContent = {
       image: "/cert-5g1.png",
       links: [
         { text: "View Module 01", href: "/cert-5g1.png" },
-        { text: "View Module 03", href: "/cert-5g2.png" },
+        { text: "View Module 03", href: "https://muhammadusman.app/cert-5g2.png" },
       ],
     },
     {
