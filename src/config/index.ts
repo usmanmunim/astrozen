@@ -130,6 +130,7 @@ export const SITE_CONTENT: SiteContent = {
       summary:
         "A C++ warehouse robot navigation system built in Visual Studio, implementing pathfinding and navigation algorithms to simulate robot movement and route planning in a warehouse environment.",
       linkSource: "https://github.com/usmanmunim/Warehouse-Robot-Navigation-System",
+      image: "/project-warehouse-robot.png",
     },
     {
       name: "Course Recovery System",
